@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Editor Gambar - Almufid</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tag Utama -->
+    <meta name="title" content="Editor Gambar - Almufid">
+    <meta name="description" content="Saya Mufid, seorang Pemimpi berbasis di Indonesia. Hire saya sekarang!">
+
+    <!-- Boxicons CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+
+    <!-- Font-Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container disable">
+        <h2>Silahkan Pilih Gambar Anda <a><i class="fas fa-chevron-circle-down"></i></a></h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filter</label>
+                    <div class="options">
+                        <button id="brightness" class="active">Kecerahan</button>
+                        <button id="saturation">Saturasi</button>
+                        <button id="inversion">Inversi</button>
+                        <button id="grayscale">Grayscale</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name">Kecerahan</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <input type="range" value="100" min="0" max="200">
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Putar & Balik</label>
+                    <div class="options">
+                        <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                        <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-img">
+                <img src="images/image-placeholder.gif" alt="preview-img">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter">Reset Filter</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <button class="choose-img">Pilih Gambar</button>
+                <button class="save-img">Simpan Gambar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript File -->
+    <script src="js/script.js"></script>
+    
+    <footer style="background-color: #333; color: #fff; position: fixed; bottom: 0; width: 100%; text-align: center; padding: 10px 0;">
+        <p>Editor Gambar oleh Almufid - Inspirasi dari hati, dan kreasi dari jiwa.</p>
+    </footer>
+    
+  </body>
+</html>
