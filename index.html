@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Editor Gambar - Almufid</title>
 
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Meta Tag Utama -->
     <meta name="title" content="Editor Gambar - Almufid">
     <meta name="description" content="Saya Mufid, seorang Pemimpi berbasis di Indonesia. Hire saya sekarang!">
@@ -18,8 +18,8 @@
 
     <!-- Font-Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container disable">
         <h2>Silahkan Pilih Gambar Anda <a><i class="fas fa-chevron-circle-down"></i></a></h2>
         <div class="wrapper">
@@ -31,6 +31,9 @@
                         <button id="saturation">Saturasi</button>
                         <button id="inversion">Inversi</button>
                         <button id="grayscale">Grayscale</button>
+                        <button id="contrast">Kontras</button>
+                        <button id="hue-rotate">Hue Rotate</button>
+                        <button id="blur">Blur</button>
                     </div>
                     <div class="slider">
                         <div class="filter-info">
@@ -38,6 +41,13 @@
                             <p class="value">100%</p>
                         </div>
                         <input type="range" value="100" min="0" max="200">
+                    </div>
+                </div>
+                <div class="draw">
+                    <label class="title">Gambar & Teks</label>
+                    <div class="options">
+                        <button id="pencil"><i class="fa-solid fa-pencil-alt"></i></button>
+                        <button id="text"><i class="fa-solid fa-font"></i></button>
                     </div>
                 </div>
                 <div class="rotate">
@@ -49,9 +59,25 @@
                         <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
                     </div>
                 </div>
+                <div class="crop-resize">
+                    <label class="title">Crop & Resize</label>
+                    <div class="options">
+                        <button id="crop"><i class="fa-solid fa-crop"></i></button>
+                        <button id="resize"><i class="fa-solid fa-expand-arrows-alt"></i></button>
+                    </div>
+                </div>
+                <div class="effects">
+                    <label class="title">Efek</label>
+                    <div class="options">
+                        <button id="sepia">Sepia</button>
+                        <button id="vintage">Vintage</button>
+                        <button id="vignette">Vignette</button>
+                    </div>
+                </div>
             </div>
             <div class="preview-img">
                 <img src="images/image-placeholder.gif" alt="preview-img">
+                <canvas></canvas>
             </div>
         </div>
         <div class="controls">
@@ -61,15 +87,17 @@
                 <button class="choose-img">Pilih Gambar</button>
                 <button class="save-img">Simpan Gambar</button>
             </div>
+            <button class="undo"><i class="fa-solid fa-undo"></i> Undo</button>
+            <button class="redo"><i class="fa-solid fa-redo"></i> Redo</button>
         </div>
     </div>
 
     <!-- Javascript File -->
     <script src="js/script.js"></script>
     
-    <footer style="background-color: #333; color: #fff; position: fixed; bottom: 0; width: 100%; text-align: center; padding: 10px 0;">
-        <p>Editor Gambar oleh Almufid - Inspirasi dari hati, dan kreasi dari jiwa.</p>
+    <footer>
+        <p>&copy; 2024 Image Editor. All rights reserved.</p>
     </footer>
     
-  </body>
+</body>
 </html>

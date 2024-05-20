@@ -8,11 +8,13 @@
 }
 body{
   display: flex;
+  flex-direction: column;
   padding: 10px;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   background: #E3F2FD;
+  margin: 0;
 }
 .container{
   width: 850px;
@@ -20,10 +22,13 @@ body{
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  flex: 1;
 }
 .container.disable .editor-panel,
 .container.disable .controls .reset-filter,
-.container.disable .controls .save-img{
+.container.disable .controls .save-img,
+.container.disable .controls .undo,
+.container.disable .controls .redo{
   opacity: 0.5;
   pointer-events: none;
 }
@@ -64,7 +69,13 @@ body{
   border: 1px solid #aaa;
 }
 .editor-panel .filter button{
-  width: calc(100% / 2 - 4px);
+  width: calc(100% / 3 - 4px);
+}
+.editor-panel .rotate button,
+.editor-panel .crop-resize button,
+.editor-panel .draw button,
+.editor-panel .effects button{
+  width: calc(100% / 4 - 3px);
 }
 .editor-panel button:hover{
   background: #f5f5f5;
@@ -88,24 +99,6 @@ body{
   height: 5px;
   accent-color: #5372F0;
 }
-.editor-panel .rotate{
-  margin-top: 17px;
-}
-.editor-panel .rotate button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% / 4 - 3px);
-}
-.rotate .options button:nth-child(3),
-.rotate .options button:nth-child(4){
-  font-size: 18px;
-}
-.rotate .options button:active{
-  color: #fff;
-  background: #5372F0;
-  border-color: #5372F0;
-}
 .wrapper .preview-img{
   flex-grow: 1;
   display: flex;
@@ -114,6 +107,7 @@ body{
   border-radius: 5px;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .preview-img img{
   max-width: 490px;
@@ -121,6 +115,11 @@ body{
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.preview-img canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .controls button{
   padding: 11px 20px;
@@ -133,11 +132,15 @@ body{
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
-.controls .reset-filter{
+.controls .reset-filter,
+.controls .undo,
+.controls .redo{
   color: #6C757D;
   border: 1px solid #6C757D;
 }
-.controls .reset-filter:hover{
+.controls .reset-filter:hover,
+.controls .undo:hover,
+.controls .redo:hover{
   color: #fff;
   background: #6C757D;
 }
@@ -178,4 +181,20 @@ body{
   .controls .row .save-img{
     margin-left: 0px;
   }
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #e7e7e7;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
 }
